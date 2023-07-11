@@ -1,5 +1,7 @@
 package gestioneEventi;
 
+import javax.persistence.EntityManager;
+
 public class EventoDAO {
 
 	// save
@@ -7,4 +9,9 @@ public class EventoDAO {
 	// delete
 	// refresh
 
+	private final EntityManager entityManager;
+
+	public EventoDAO(EntityManager _entityManager) {
+		this.entityManager = _entityManager;
+	}
 }
