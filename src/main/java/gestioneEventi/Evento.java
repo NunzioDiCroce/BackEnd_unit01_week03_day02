@@ -20,9 +20,69 @@ public class Evento {
 
 	@Id
 	private long id;
+
 	private String titolo;
 	private LocalDate dataEvento;
+	private String descrizione;
+	private TipoEvento tipoEvento;
+	private int numeroMassimoPartecipanti;
 
 	// costruttori, getters e setters...
+	public Evento() {
+
+	}
+
+	public Evento(String _titolo, LocalDate _dataEvento, String _descrizione, TipoEvento _tipoEvento,
+			int _numeroMassimoPartecipanti) {
+		this.titolo = _titolo;
+		this.dataEvento = _dataEvento;
+		this.descrizione = _descrizione;
+		this.tipoEvento = _tipoEvento;
+		this.numeroMassimoPartecipanti = _numeroMassimoPartecipanti;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public String getTitolo() {
+		return titolo;
+	}
+
+	public void setTitolo(String _titolo) {
+		this.titolo = _titolo;
+	}
+
+	public LocalDate getDataEvento() {
+		return dataEvento;
+	}
+
+	public void setDataEvento(LocalDate _dataEvento) {
+		this.dataEvento = _dataEvento;
+	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String _descrizione) {
+		this.descrizione = _descrizione;
+	}
+
+	public TipoEvento getTipoEvento() {
+		return tipoEvento;
+	}
+
+	public void setTipoEvento(TipoEvento _tipoEvento) {
+		this.tipoEvento = _tipoEvento;
+	}
+
+	public int getNumeroMassimoPartecipanti() {
+		return numeroMassimoPartecipanti;
+	}
+
+	public void setNumeroMassimoPartecipanti(int _numeroMassimoPartecipanti) {
+		this.numeroMassimoPartecipanti = _numeroMassimoPartecipanti;
+	}
 
 }
