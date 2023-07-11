@@ -27,7 +27,19 @@ public class EventoDAO {
 	public Evento findById(long _id) {
 		Evento eventoCercato = entityManager.find(Evento.class, _id);
 		return eventoCercato;
+	}
 
+	public void findByIdAndDelete(long _id) {
+		Evento eventoCercato = entityManager.find(Evento.class, _id);
+		if (eventoCercato != null) {
+			EntityTransaction entityTransaction = entityManager.getTransaction();
+			entityTransaction.begin();
+			entityManager.remove(eventoCercato);
+			entityTransaction.commit();
+
+		} else {
+			System.out.println("Evento non trovato");
+		}
 	}
 
 }
