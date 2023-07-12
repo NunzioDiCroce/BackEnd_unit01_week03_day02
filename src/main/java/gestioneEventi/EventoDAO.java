@@ -45,12 +45,12 @@ public class EventoDAO {
 	public void refresh(long _id) {
 		Evento eventoCercato = entityManager.find(Evento.class, _id);
 
-		eventoCercato.setTitolo("Refresh!");
-		System.out.println("Proposta nuovo titolo con refresh:");
+		eventoCercato.setTitolo("REFRESH!");
+		System.out.println("Evento con refresh del titolo:");
 		System.out.println(eventoCercato);
 
 		entityManager.refresh(eventoCercato);
-		System.out.println("Titolo presente in db:");
+		System.out.println("Evento con titolo presente nel database:");
 		System.out.println(eventoCercato);
 
 	}

@@ -82,6 +82,16 @@ public class App {
 		System.out.println(eventoDaCancellare);
 
 		// - - - - - - - - - - - - - - - - - - - - REFRESH
+		System.out.println("");
+		System.out.println("");
+		System.out.println("- - - - - - - - - - - - - - - eventoDAO.findByIdAndDelete");
+		System.out.println("");
+		eventoDao.refresh(3);
+
+		// - - - - - - - - - - - - - - - - - - - - entityManager & entityManagerFactory
+		// closing
+		entityManager.close();
+		entityManagerFactory.close();
 
 	}
 
