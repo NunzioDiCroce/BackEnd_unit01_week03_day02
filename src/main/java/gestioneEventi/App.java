@@ -19,6 +19,7 @@ public class App {
 		System.out
 				.println("- - - - - - - - - - - - - - - App Gestione Eventi is running - - - - - - - - - - - - - - -");
 
+		// - - - - - - - - - - - - - - - - - - - - OBJECTS CREATION
 		// public Evento(String _titolo, LocalDate _dataEvento, String _descrizione,
 		// TipoEvento _tipoEvento,
 		// int _numeroMassimoPartecipanti)
@@ -28,7 +29,15 @@ public class App {
 		EventoDAO eventoDao = new EventoDAO(entityManager);
 
 		// - - - - - - - - - - - - - - - - - - - - SAVE
-		eventoDao.save(primoEvento);
+		// eventoDao.save(primoEvento);
+
+		// - - - - - - - - - - - - - - - - - - - - FIND BY ID
+		Evento eventoCercato = eventoDao.findById(0);
+		System.out.println(eventoCercato);
+
+		// - - - - - - - - - - - - - - - - - - - - FIND BY ID AND DELETE
+
+		// - - - - - - - - - - - - - - - - - - - - REFRESH
 
 	}
 

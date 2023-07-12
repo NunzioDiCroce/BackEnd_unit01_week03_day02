@@ -85,4 +85,10 @@ public class Evento {
 		this.numeroMassimoPartecipanti = _numeroMassimoPartecipanti;
 	}
 
+	@Override
+	public String toString() {
+		return "Evento " + id + ", " + titolo + ", " + dataEvento + ", " + descrizione + ", " + tipoEvento + ", "
+				+ numeroMassimoPartecipanti;
+
+	}
 }
