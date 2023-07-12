@@ -26,6 +26,19 @@ public class App {
 		LocalDate primaData = LocalDate.of(2023, 7, 1);
 		Evento primoEvento = new Evento(1, "primoEvento", primaData, "primaDescrizione", TipoEvento.PRIVATO, 100);
 
+		LocalDate secondaData = LocalDate.of(2023, 7, 1);
+		Evento secondoEvento = new Evento(2, "secondoEvento", secondaData, "secondaDescrizione", TipoEvento.PRIVATO,
+				100);
+
+		LocalDate terzaData = LocalDate.of(2023, 7, 1);
+		Evento terzoEvento = new Evento(3, "terzoEvento", terzaData, "terzaDescrizione", TipoEvento.PUBBLICO, 1000);
+
+		LocalDate quartaData = LocalDate.of(2023, 7, 1);
+		Evento quartoEvento = new Evento(4, "quartoEvento", quartaData, "quartaDescrizione", TipoEvento.PUBBLICO, 2000);
+
+		LocalDate quintaData = LocalDate.of(2023, 7, 1);
+		Evento quintoEvento = new Evento(5, "quintiEvento", quintaData, "quintaDescrizione", TipoEvento.PUBBLICO, 3000);
+
 		EventoDAO eventoDao = new EventoDAO(entityManager);
 
 		// - - - - - - - - - - - - - - - - - - - - SAVE
@@ -33,10 +46,18 @@ public class App {
 		System.out.println("");
 		System.out.println("- - - - - - - - - - - - - - - eventoDAO.save");
 		System.out.println("");
-		eventoDao.save(primoEvento);
+		// eventoDao.save(primoEvento); da inibire perché già salvato nel db
+		eventoDao.save(secondoEvento);
+		// eventoDao.save(terzoEvento); da inibire perché già salvato nel db
+		// eventoDao.save(quartoEvento); da inibire perché già salvato nel db
+		// eventoDao.save(quintoEvento); da inibire perché già salvato nel db
 		System.out.println("");
 		System.out.println("Nel database sono stati salvati i seguenti oggetti:");
 		System.out.println(primoEvento);
+		System.out.println(secondoEvento);
+		System.out.println(terzoEvento);
+		System.out.println(quartoEvento);
+		System.out.println(quintoEvento);
 
 		// - - - - - - - - - - - - - - - - - - - - FIND BY ID
 		System.out.println("");
@@ -49,13 +70,13 @@ public class App {
 
 		// - - - - - - - - - - - - - - - - - - - - FIND BY ID AND DELETE
 
-		Evento eventoDaCancellare = eventoDao.findById(1);
+		Evento eventoDaCancellare = eventoDao.findById(2);
 
 		System.out.println("");
 		System.out.println("");
 		System.out.println("- - - - - - - - - - - - - - - eventoDAO.findByIdAndDelete");
 		System.out.println("");
-		eventoDao.findByIdAndDelete(1);
+		eventoDao.findByIdAndDelete(2);
 		System.out
 				.println("Nel database è stato cancellato il seguente oggetto con id = " + eventoDaCancellare.getId());
 		System.out.println(eventoDaCancellare);
