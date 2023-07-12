@@ -39,6 +39,7 @@ public class App {
 		LocalDate quintaData = LocalDate.of(2023, 7, 1);
 		Evento quintoEvento = new Evento(5, "quintiEvento", quintaData, "quintaDescrizione", TipoEvento.PUBBLICO, 3000);
 
+		// - - - - - - - - - - - - - - - - - - - - DAO OBJECT CREATION
 		EventoDAO eventoDao = new EventoDAO(entityManager);
 
 		// - - - - - - - - - - - - - - - - - - - - SAVE

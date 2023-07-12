@@ -19,6 +19,7 @@ public class Evento {
 	// numeroMassimoPartecipanti
 
 	@Id
+	// @GeneratedValue
 	private long id;
 
 	private String titolo;
