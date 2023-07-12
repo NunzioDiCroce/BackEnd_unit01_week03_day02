@@ -32,8 +32,9 @@ public class Evento {
 
 	}
 
-	public Evento(String _titolo, LocalDate _dataEvento, String _descrizione, TipoEvento _tipoEvento,
+	public Evento(long _id, String _titolo, LocalDate _dataEvento, String _descrizione, TipoEvento _tipoEvento,
 			int _numeroMassimoPartecipanti) {
+		this.id = _id;
 		this.titolo = _titolo;
 		this.dataEvento = _dataEvento;
 		this.descrizione = _descrizione;

@@ -24,7 +24,7 @@ public class App {
 		// TipoEvento _tipoEvento,
 		// int _numeroMassimoPartecipanti)
 		LocalDate primaData = LocalDate.of(2023, 7, 1);
-		Evento primoEvento = new Evento("primoEvento", primaData, "primaDescrizione", TipoEvento.PRIVATO, 100);
+		Evento primoEvento = new Evento(1, "primoEvento", primaData, "primaDescrizione", TipoEvento.PRIVATO, 100);
 
 		EventoDAO eventoDao = new EventoDAO(entityManager);
 
@@ -43,19 +43,19 @@ public class App {
 		System.out.println("");
 		System.out.println("- - - - - - - - - - - - - - - eventoDAO.findById");
 		System.out.println("");
-		Evento eventoCercato = eventoDao.findById(0);
+		Evento eventoCercato = eventoDao.findById(1);
 		System.out.println("Nel database è presente il seguente oggetto con id = " + eventoCercato.getId());
 		System.out.println(eventoCercato);
 
 		// - - - - - - - - - - - - - - - - - - - - FIND BY ID AND DELETE
 
-		Evento eventoDaCancellare = eventoDao.findById(0);
+		Evento eventoDaCancellare = eventoDao.findById(1);
 
 		System.out.println("");
 		System.out.println("");
 		System.out.println("- - - - - - - - - - - - - - - eventoDAO.findByIdAndDelete");
 		System.out.println("");
-		eventoDao.findByIdAndDelete(0);
+		eventoDao.findByIdAndDelete(1);
 		System.out
 				.println("Nel database è stato cancellato il seguente oggetto con id = " + eventoDaCancellare.getId());
 		System.out.println(eventoDaCancellare);
